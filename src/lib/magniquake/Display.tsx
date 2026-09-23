@@ -143,7 +143,7 @@ function IntBlock({ int, data }: { int: string; data: Record<string, string[]> }
       <div
         className={`
         relative border-l-8 ${currentStyle.border} ${currentStyle.bg} ${currentStyle.text} p-6 rounded-r-card transition-all duration-500
-        ${isFilled ? 'border-y border-r border-transparent' : 'border-y border-r border-neutral-200/50 dark:border-neutral-800/50 shadow-sm'}
+        ${isFilled ? 'border-y border-r border-y-transparent border-r-transparent' : 'border-y border-r border-y-neutral-200/50 border-r-neutral-200/50 dark:border-y-neutral-800/50 dark:border-r-neutral-800/50 shadow-sm'}
         ${isExtreme ? 'ring-2 ring-purple-600/50 ring-offset-2 ring-offset-black' : ''}
       `}
       >
@@ -198,35 +198,40 @@ function getIntStyle(int: string) {
       label: '1',
       bg: 'bg-blue-50 dark:bg-neutral-900',
       text: 'text-blue-700 dark:text-blue-300',
-      border: 'border-blue-200 dark:border-blue-600',
+      border: 'border-l-blue-200 dark:border-l-blue-600',
     },
     '2': {
       label: '2',
       bg: 'bg-indigo-50 dark:bg-neutral-900',
       text: 'text-indigo-700 dark:text-indigo-300',
-      border: 'border-indigo-200 dark:border-indigo-500',
+      border: 'border-l-indigo-200 dark:border-l-indigo-500',
     },
     '3': {
       label: '3',
       bg: 'bg-violet-50 dark:bg-neutral-900',
       text: 'text-violet-700 dark:text-violet-300',
-      border: 'border-violet-200 dark:border-violet-500',
+      border: 'border-l-violet-200 dark:border-l-violet-500',
     },
     '4': {
       label: '4',
       bg: 'bg-purple-50 dark:bg-neutral-900',
       text: 'text-purple-700 dark:text-vipelar',
-      border: 'border-purple-200 dark:border-vipelar/60',
+      border: 'border-l-purple-200 dark:border-l-vipelar/60',
     },
-    '5-': { label: '5弱', bg: 'bg-amber-500', text: 'text-white', border: 'border-amber-500' },
-    '5+': { label: '5強', bg: 'bg-orange-600', text: 'text-white', border: 'border-orange-600' },
-    '6-': { label: '6弱', bg: 'bg-red-700', text: 'text-white', border: 'border-red-700' },
-    '6+': { label: '6強', bg: 'bg-fuchsia-800', text: 'text-white', border: 'border-fuchsia-800' },
+    '5-': { label: '5弱', bg: 'bg-amber-500', text: 'text-white', border: 'border-l-amber-500' },
+    '5+': { label: '5強', bg: 'bg-orange-600', text: 'text-white', border: 'border-l-orange-600' },
+    '6-': { label: '6弱', bg: 'bg-red-700', text: 'text-white', border: 'border-l-red-700' },
+    '6+': {
+      label: '6強',
+      bg: 'bg-fuchsia-800',
+      text: 'text-white',
+      border: 'border-l-fuchsia-800',
+    },
     '7': {
       label: '7',
       bg: 'bg-gradient-to-br from-purple-950 via-black to-purple-950',
       text: 'text-white',
-      border: 'border-black',
+      border: 'border-l-black',
     },
   };
 

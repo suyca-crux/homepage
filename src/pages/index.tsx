@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@/layouts/Layout';
 import Card from '@/components/Card';
 import { Heading } from '@vipelar/ui';
-import { Activity, Palette } from 'lucide-react';
+import { Activity } from 'lucide-react';
 
 const PROJECTS = [
   {
@@ -11,13 +11,6 @@ const PROJECTS = [
     title: 'Magniquake',
     description:
       '気象庁発表の「震度速報」、「震源に関する情報」、「震源・震度に関する情報」、「遠地地震に関する情報」を自分好みの画面で見たくなりました。',
-  },
-  {
-    href: '/color-converter',
-    icon: Palette,
-    title: 'Color Converter',
-    description:
-      'HEXとrgb・hsl・oklch・labなどを相互に変換して、その色を主役にしたカラーランプとデザイントークンまで一気に生成します。',
   },
 ];
 
