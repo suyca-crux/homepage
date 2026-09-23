@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # npm auth (GitHub Packages)
 .npmrc
+.vercel
+.env*
