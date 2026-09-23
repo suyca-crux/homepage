@@ -1,9 +1,6 @@
 import React from 'react';
 import Layout from '@/layouts/Layout';
 import { Link } from 'react-router-dom';
-
-// 震度ブロックのコンポーネントを直接インポート
-// (Display.tsx から IntBlock を export する必要がありますが、まずはページ側で再現または Display.tsx を調整します)
 import { IntList } from '@/lib/magniquake/Display';
 import type { Data } from '@/lib/magniquake/types';
 
@@ -79,22 +76,26 @@ const PreviewPage: React.FC = () => {
   return (
     <Layout title="Intensity Preview">
       <div className="w-full max-w-6xl">
-        <div className="mb-8 border-b border-border pb-4">
+        <div className="mb-8 border-b border-neutral-200 dark:border-neutral-800 pb-4">
           <Link
             to="/magniquake"
-            className="text-accent hover:underline text-sm mb-2 block font-medium"
+            className="text-primary dark:text-primary-400 hover:underline text-caption mb-2 block font-medium"
           >
             &larr; Magniquakeに戻る
           </Link>
-          <h1 className="text-4xl font-black text-main-text">震度表示プレビュー</h1>
-          <p className="text-gray-500 mt-2">すべての震度階級の配色を確認するためのページです。</p>
+          <h1 className="text-h1 font-bold text-neutral-900 dark:text-neutral-50">
+            震度表示プレビュー
+          </h1>
+          <p className="text-body text-neutral-600 dark:text-neutral-400 mt-2">
+            すべての震度階級の配色を確認するためのページです。
+          </p>
         </div>
 
-        <div className="bg-card-bg border border-border rounded-xl p-8 shadow-sm">
+        <div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-card p-8 shadow-md">
           <IntList data={mockData} />
         </div>
 
-        <div className="mt-8 text-center text-sm text-gray-400">
+        <div className="mt-8 text-center text-caption text-neutral-500 dark:text-neutral-400">
           右上のスイッチでライト/ダークを切り替えて確認してください。
         </div>
       </div>

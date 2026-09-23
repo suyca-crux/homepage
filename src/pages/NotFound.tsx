@@ -2,23 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/layouts/Layout';
 import { ArrowUpRight } from 'lucide-react';
-import Text from '@/components/Text';
+import { Heading, Space, Text } from '@vipelar/ui';
 
 const NotFoundPage: React.FC = () => {
   return (
     <Layout title="404">
       <section className="max-w-3xl">
-        <Text type="error">404</Text>
-        <h1 className="text-5xl sm:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1]">
-          ページが見つかりません
-        </h1>
-        <p className="text-lg text-main-text opacity-70 leading-relaxed text-pretty mb-12">
-          お探しのページは存在しないか、移動・削除された可能性があります。
-        </p>
+        <Text size="sm" color="red" bold className="tracking-widest">
+          404
+        </Text>
+        <Heading title="ページが見つかりません" />
+        <Space />
+        <Text color="gray">お探しのページは存在しないか、移動・削除された可能性があります。</Text>
+        <Space size="xl" />
 
         <Link
           to="/"
-          className="group inline-flex items-center gap-2 text-2xl font-extrabold tracking-tight text-main-text hover:text-accent transition-colors"
+          className="group inline-flex items-center gap-2 text-h4 font-bold text-neutral-900 dark:text-neutral-50 hover:text-primary dark:hover:text-primary-400 transition-colors"
         >
           トップページへ戻る
           <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

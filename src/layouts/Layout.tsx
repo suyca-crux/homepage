@@ -1,6 +1,5 @@
 import React from 'react';
-import '@fontsource/m-plus-rounded-1c/400.css';
-import '@fontsource/m-plus-rounded-1c/700.css';
+import '@fontsource-variable/inter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import '@/styles/global.css';

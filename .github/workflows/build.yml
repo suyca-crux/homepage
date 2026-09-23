@@ -21,5 +21,10 @@ jobs:
           node-version: 24
           cache: 'pnpm'
 
+      - name: Setup npmrc for GitHub Packages
+        run: |
+          echo "@vipelar:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.VIPELAR_PACKAGES_TOKEN }}" >> ~/.npmrc
+
       - run: pnpm install
       - run: pnpm build

@@ -21,20 +21,22 @@ const MagniquakePage: React.FC = () => {
     <Layout title="Magniquake">
       {loading ? (
         <div className="flex items-center justify-center min-h-100">
-          <p className="text-lg animate-pulse">データを読み込み中...</p>
+          <p className="text-body animate-pulse text-neutral-600 dark:text-neutral-400">
+            読み込み中...
+          </p>
         </div>
       ) : data ? (
         <div className="w-full">
-          <div className="mb-12 border-b border-border pb-6 transition-colors">
+          <div className="mb-12 border-b border-neutral-200 dark:border-neutral-800 pb-6 transition-colors">
             <Link
               to="/"
-              className="text-accent hover:underline text-sm mb-4 inline-block font-medium"
+              className="text-primary dark:text-primary-400 hover:underline text-caption mb-4 inline-block font-medium"
             >
               &larr; Vipelar's toy box
             </Link>
             <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
               <Head data={data.Head} />
-              <p className="text-main-text opacity-40 text-sm tabular-nums">
+              <p className="text-neutral-500 dark:text-neutral-400 text-caption tabular-nums">
                 Event ID: {data.Head.EventID}
               </p>
             </div>
@@ -46,17 +48,17 @@ const MagniquakePage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-2">
-              <h2 className="text-sm font-bold text-accent uppercase tracking-wider mb-6">
+              <h2 className="text-caption font-bold text-primary dark:text-primary-400 uppercase tracking-wider mb-6">
                 各地の震度
               </h2>
               <IntList data={data} />
             </div>
           </div>
 
-          <div className="text-center py-8 border-t border-border transition-colors">
+          <div className="text-center py-8 border-t border-neutral-200 dark:border-neutral-800 transition-colors">
             <a
               href="https://ntool.online/apidoc/earthquakeapi"
-              className="text-main-text opacity-40 hover:text-accent hover:opacity-100 text-sm inline-flex items-center gap-1 transition-colors"
+              className="text-neutral-500 dark:text-neutral-400 hover:text-primary dark:text-primary-400 hover:opacity-100 text-caption inline-flex items-center gap-1 transition-colors"
               target="_blank"
               rel="noreferrer"
             >
@@ -67,9 +69,12 @@ const MagniquakePage: React.FC = () => {
         </div>
       ) : (
         <div className="text-center py-20">
-          <p className="text-xl text-red-600 dark:text-red-400">データの取得に失敗しました</p>
-          <button onClick={() => window.location.reload()} className="mt-4 text-accent underline">
-            再試行する
+          <p className="text-h3 font-bold text-danger">データの取得に失敗しました</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 text-body text-primary dark:text-primary-400 underline"
+          >
+            再試行
           </button>
         </div>
       )}

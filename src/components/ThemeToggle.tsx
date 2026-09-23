@@ -35,7 +35,6 @@ const ThemeToggle: React.FC = () => {
       localStorage.setItem('theme', theme);
     }
 
-    // システム設定の変更を監視
     const handleChange = () => {
       if (theme === 'system') updateTheme();
     };
@@ -44,7 +43,7 @@ const ThemeToggle: React.FC = () => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
-  // ドロップダウンの外側をクリックした時に閉じる
+  // 外側をクリックで閉じる
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -67,7 +66,7 @@ const ThemeToggle: React.FC = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card-bg text-main-text hover:ring-2 hover:ring-vipelar transition-all text-sm font-medium border border-border shadow-sm"
+        className="flex items-center gap-2 px-3 py-2 rounded-button bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50 hover:ring-2 hover:ring-vipelar transition-all text-caption font-medium border border-neutral-200 dark:border-neutral-800 shadow-sm"
         aria-label="Change theme"
       >
         {currentOption?.icon}
@@ -76,7 +75,7 @@ const ThemeToggle: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-36 rounded-xl bg-background border border-border shadow-xl z-[100] overflow-hidden transition-all">
+        <div className="absolute right-0 mt-2 w-36 rounded-card bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-sm z-[100] overflow-hidden transition-all">
           <div className="p-1">
             {options.map((opt) => (
               <button
@@ -85,10 +84,10 @@ const ThemeToggle: React.FC = () => {
                   setTheme(opt.value);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-button text-caption transition-colors ${
                   theme === opt.value
                     ? 'bg-vipelar/10 text-vipelar'
-                    : 'text-main-text opacity-70 hover:bg-card-bg'
+                    : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-900'
                 }`}
               >
                 {opt.icon}
