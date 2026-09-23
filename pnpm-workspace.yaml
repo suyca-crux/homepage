@@ -5,3 +5,5 @@
 
 minimumReleaseAgeExclude:
   - '@vipelar/*'
+
+strictPeerDependencies: true
