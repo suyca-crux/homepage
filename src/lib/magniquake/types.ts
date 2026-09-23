@@ -25,7 +25,6 @@ export type Pref = {
   Area?: Area[];
 };
 
-// fetch data types
 type Control = {
   Title: string;
   DateTime: string;

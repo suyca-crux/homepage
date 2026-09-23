@@ -30,7 +30,7 @@ export default function Menu({ links }: { links: LinkType[] }) {
   return (
     <div className="md:hidden">
       <button
-        className="p-2 -m-2 rounded-md text-main-text hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+        className="p-2 -m-2 rounded-button text-neutral-900 dark:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
         onClick={(e) => {
           e.stopPropagation();
           setIsOpen(!isOpen);
@@ -41,7 +41,7 @@ export default function Menu({ links }: { links: LinkType[] }) {
       </button>
       <nav
         ref={menuRef}
-        className={`bg-background dark:bg-card-bg border-b border-border shadow-xl absolute top-16 left-0 w-full py-4 transition-all duration-300 ease-in-out transform z-40 ${
+        className={`bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 shadow-lg absolute top-16 left-0 w-full py-4 transition-all duration-300 ease-in-out transform z-40 ${
           isOpen
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-4 pointer-events-none'
@@ -52,7 +52,7 @@ export default function Menu({ links }: { links: LinkType[] }) {
             <Link
               key={href}
               to={href}
-              className="block px-6 py-3 text-lg text-main-text transition-colors"
+              className="block px-6 py-3 text-h4 text-neutral-900 dark:text-neutral-50 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {label}

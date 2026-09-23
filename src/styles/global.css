@@ -1,71 +1,19 @@
 @import 'tailwindcss';
-
-/* 
- * -----------------------------------------------------------------------------
- * Vipelar Styles
- * Vipelarの自分勝手なこだわりに基づいた色定義と基本アニメーション
- * -----------------------------------------------------------------------------
- */
-
-:root {
-  /* 基底の背景と文字色 */
-  --background: #ffffff;
-  --foreground: #2b2b2b;
-  --font-mplus-rounded: 'M PLUS Rounded 1c', 'sans-serif';
-
-  /* デザインシステム（ライトモード） */
-  --color-card-bg: #fafafa;
-  --color-accent: #0065a3;
-  --color-main-text: #2b2b2b;
-  --color-border: #e5e7eb;
-  --color-muted-bg: #f4f4f5; /* 画像なしプレースホルダー等に使用 */
-}
-
-.dark {
-  /* 基底の背景と文字色（ダークモード） */
-  --background: #121212;
-  --foreground: #fafafa;
-
-  /* デザインシステム（ダークモード） */
-  --color-card-bg: #2b2b2b;
-  --color-accent: #ade0ee;
-  --color-main-text: #fafafa;
-  --color-border: #3f3f46;
-  --color-muted-bg: #1f1f22; /* カード背景より一段暗いグレー */
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  /* コンポーネント用エイリアス */
-  --color-card-bg: var(--color-card-bg);
-  --color-accent: var(--color-accent);
-  --color-main-text: var(--color-main-text);
-  --color-border: var(--color-border);
-  --color-muted-bg: var(--color-muted-bg);
-
-  /* プロジェクト固定色 */
-  --color-vipelar: #d396ed;
-  --color-second-light: #0065a3;
-  --color-second-dark: #ade0ee;
-  --color-light: #fafafa;
-  --color-dark: #2b2b2b;
-  --color-line: #999f9f;
-}
+@import '@vipelar/ui/theme.css';
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-mplus-rounded);
+  background: var(--color-white);
+  color: var(--color-neutral-900);
   transition:
     background-color 0.3s,
     color 0.3s;
 }
 
-/* 
- * アニメーション定義
- */
+.dark body {
+  background: var(--color-neutral-950);
+  color: var(--color-neutral-50);
+}
+
 @keyframes glow-pulse {
   0%,
   100% {

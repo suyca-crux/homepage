@@ -1,39 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 interface CardProps {
-  index?: number;
+  icon: LucideIcon;
   title: string;
   description: string;
   href: string;
 }
 
-/**
- * プロジェクト一覧で使用するエディトリアル風リストアイテム
- * 番号・タイトル・説明を横並びにし、ホバーでアクセントカラーへ反応します
- */
-const Card: React.FC<CardProps> = ({ index, title, description, href }) => {
+const Card: React.FC<CardProps> = ({ icon: Icon, title, description, href }) => {
   return (
-    <Link
-      to={href}
-      className="group flex items-start sm:items-baseline gap-4 sm:gap-8 py-8 border-b border-border transition-colors hover:border-vipelar"
-    >
-      {typeof index === 'number' && (
-        <span className="text-sm font-bold text-main-text opacity-30 tabular-nums pt-1 sm:pt-0">
-          {String(index).padStart(2, '0')}
-        </span>
-      )}
-      <div className="flex-1 min-w-0">
-        <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-main-text group-hover:text-accent transition-colors">
-          {title}
-        </h3>
-        <p className="mt-2 text-main-text opacity-60 leading-relaxed max-w-2xl">{description}</p>
+    <Link to={href} className="relative flex items-center justify-between p-4 group">
+      <div className="flex items-center gap-4">
+        <Icon size={28} className="text-primary dark:text-primary-400 shrink-0" />
+        <div>
+          <h2 className="font-bold text-neutral-900 dark:text-neutral-50 transition-colors group-hover:text-primary dark:group-hover:text-primary-400">
+            {title}
+          </h2>
+          <p className="text-caption text-neutral-500 dark:text-neutral-400 mt-1">{description}</p>
+        </div>
       </div>
-      <ArrowUpRight
-        className="shrink-0 w-6 h-6 mt-1 text-main-text opacity-30 group-hover:opacity-100 group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
-        aria-hidden="true"
-      />
+      <div className="text-primary dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity">
+        →
+      </div>
+      <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-primary dark:bg-primary-400 transition-transform duration-300 ease-out group-hover:scale-x-100" />
     </Link>
   );
 };
