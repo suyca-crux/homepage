@@ -5,6 +5,7 @@ import HomePage from './pages/index';
 import MagniquakePage from './pages/magniquake/index';
 import PreviewPage from './pages/magniquake/preview';
 import NotFoundPage from './pages/NotFound';
+import '@vipelar/ui/styles.css';
 import './styles/global.css';
 
 createRoot(document.getElementById('root')!).render(
