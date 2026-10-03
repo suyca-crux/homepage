@@ -180,7 +180,7 @@ importers:
         version: 19.3.0(@types/react@19.3.0)
       '@vipelar/ui':
         specifier: ^1.0.0
-        version: 1.1.0(lucide-react@1.47.0(react@19.3.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        version: 1.2.0(lucide-react@1.47.0(react@19.3.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       lucide-react:
         specifier: ^1.33.0
         version: 1.47.0(react@19.3.0)
@@ -682,8 +682,8 @@ packages:
     resolution: {integrity: sha512-BoC8PiO4Hkdo0TVJh9Ntxr5MxPDI7/oFsrygN5ADelFSeXG/qgNuucIGA+L5Z6JpPTE/uRfcTWtscjbUaufepQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@vipelar/ui@1.1.0':
-    resolution: {integrity: sha512-lFOQCFr2JEfi1PDpvU9QJuHBhEL63f/aaWAqtP69fDaeBwAUQjPZOK1dW5L4meGyKrhaX+Cr8g1B9jXFzSsV0w==, tarball: https://npm.pkg.github.com/download/@vipelar/ui/1.1.0/c63dba40b86746a011760a658cb57cec8a91d8de}
+  '@vipelar/ui@1.2.0':
+    resolution: {integrity: sha512-7w0E9joMLmaCSWhEYyWIXrARS0/J9aHtcBmVsRv3Us/RJWv3D2rhxbrmYd/rS5CpfzBMn8IngF60ApM4v0z87A==, tarball: https://npm.pkg.github.com/download/@vipelar/ui/1.2.0/41fed061ca84f7be3359c8e1799ea88e2d526b8d}
     peerDependencies:
       lucide-react: '>=1'
       react: '>=19'
@@ -1804,7 +1804,7 @@ snapshots:
       '@typescript-eslint/types': 8.70.0
       eslint-visitor-keys: 5.0.1
 
-  '@vipelar/ui@1.1.0(lucide-react@1.47.0(react@19.3.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
+  '@vipelar/ui@1.2.0(lucide-react@1.47.0(react@19.3.0))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
     dependencies:
       lucide-react: 1.47.0(react@19.3.0)
       react: 19.3.0
