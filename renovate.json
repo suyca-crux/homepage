@@ -12,8 +12,10 @@
   "prConcurrentLimit": 0,
   "prCreation": "immediate",
   "rebaseWhen": "behind-base-branch",
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dependency Dashboard",
+  "dependencyDashboard": {
+    "enabled": true,
+    "title": "Renovate Dependency Dashboard"
+  },
   "minimumReleaseAge": "1 day",
   "internalChecksFilter": "strict",
   "packageRules": [
